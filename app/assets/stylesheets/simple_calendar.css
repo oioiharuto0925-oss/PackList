@@ -1,0 +1,7 @@
+.simple-calendar table {
+  width: 100%;
+}
+.simple-calendar th, .simple-calendar td {
+  padding: 5px;
+  text-align: center;
+}
