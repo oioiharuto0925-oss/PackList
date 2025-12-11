@@ -1,7 +1,111 @@
 .simple-calendar table {
   width: 100%;
 }
-.simple-calendar th, .simple-calendar td {
-  padding: 5px;
+/* -------------------------
+   カレンダー全体
+------------------------- */
+.simple-calendar {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.1);
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+/* -------------------------
+   見出し（前月・今月タイトル・次月）
+------------------------- */
+.calendar-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-heading a {
+  text-decoration: none;
+  color: #555;
+  font-weight: bold;
+}
+
+.calendar-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* -------------------------
+    曜日ヘッダー
+------------------------- */
+.simple-calendar th {
   text-align: center;
+  padding: 12px 0;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  background: #fafafa;
+}
+
+/* 日曜日：赤 */
+.simple-calendar th:nth-child(7),
+.simple-calendar td:nth-child(7) {
+  color: red;
+}
+
+/* 土曜日：青 */
+.simple-calendar th:nth-child(6),
+.simple-calendar td:nth-child(6) {
+  color: blue;
+}
+
+/* -------------------------
+    日付セル
+------------------------- */
+.simple-calendar td {
+  height: 95px;
+  text-align: left;
+  vertical-align: top;
+  padding: 8px;
+  border: 1px solid #eee;
+  background: white;
+  transition: 0.2s;
+  border-radius: 6px;
+}
+
+/* ホバーで浮く感じ */
+.simple-calendar td:hover {
+  background: #f3faff;
+  transform: scale(1.02);
+}
+
+/* 今日（日付が class="today" になる） */
+.simple-calendar td.today {
+  background: #fff7d9 !important;
+  border: 2px solid #ffcc66;
+}
+
+/* イベントリンク */
+.simple-calendar td a {
+  display: block;
+  margin-top: 6px;
+  padding: 4px 6px;
+  background: #eef5ff;
+  border-left: 4px solid yellow;
+  border-radius: 4px;
+  color: #333;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* ホバーで強調 */
+.simple-calendar td a:hover {
+  background: #dce9ff;
+}
+
+/* カレンダー全体のテーブル調整 */
+.simple-calendar table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 4px;
 }

@@ -1,0 +1,52 @@
+/* 全体レイアウト */
+.top-wrapper {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.top-title {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+/* ボタン2つの配置 */
+.top-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* ボタンのデザイン */
+.btn-main, .btn-sub {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  border-radius: 8px;
+}
+
+.btn-main {
+  background: #007bff;
+}
+
+.btn-sub {
+  background: #555;
+}
+
+/* カレンダー枠 */
+.calendar-wrapper {
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+/* テーブル */
+.blog-table {
+  margin: 0 auto;
+  width: 80%;
+  border-collapse: collapse;
+}
+
+.blog-table th, .blog-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}

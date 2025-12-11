@@ -1,0 +1,75 @@
+/* ページ全体 */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+}
+
+/* 中央揃えの大枠 */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  min-height: 100vh;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ヘッダー */
+.header {
+  background: #4a90e2;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+/* ナビゲーションバー */
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 20px;
+  background: #eee;
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* メイン領域 */
+.main {
+  padding: 20px;
+}
+
+.tweet-card {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+
+/* ボタン */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #4a90e2;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background: #357ab7;
+}
+
+/* フッター */
+.footer {
+  background: #f3f3f3;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  color: #555;
+}

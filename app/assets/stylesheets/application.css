@@ -12,3 +12,47 @@
  *= require_tree .
  *= require_self
  */
+/* ヘッダー全体のデザイン */
+header {
+  background: #000;      /* 黒背景 */
+  color: #fff;           /* 白文字 */
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 左右に分ける */
+}
+
+/* packlist を中央寄せ */
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #fff;
+  position: absolute;       /* 中央に固定 */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 新規登録 / ログイン リスト */
+.header-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.header-list ul li a {
+  color: #fff;             /* 白文字 */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* button_to の形式を白文字へ */
+.header-list form button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+

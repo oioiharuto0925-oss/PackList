@@ -1,42 +1,54 @@
 
-<h1>自分の日記</h1>
+<div class="top-wrapper">
 
-<table>
-  <thead>
-    <tr>
-      <th>タイトル</th>
-      <th>時間</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <!-- ① タイトル（中央） -->
+  <h1 class="top-title">Wherever you wish to go</h1>
 
-<% if user_signed_in? %>
-  <%= link_to "マイページへ", user_path(current_user.id) %>
-<% end %>
+  <!-- ② ボタン2つ（中央配置） -->
+  <div class="top-buttons">
+    <%= link_to "write", new_blog_path, class: "btn-main" %>
 
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.start_time.strftime("%Y-%m-%d %H:%M") %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog.id) %></td>
-        <td><%= link_to 'Destroy',blog_path(blog.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% if user_signed_in? %>
+      <%= link_to "My page", user_path(current_user.id), class: "btn-sub" %>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
-<br>
+  <!-- ③ カレンダー表示 -->
+  <div class="calendar-wrapper">
+    <%= month_calendar events: @blogs do |date, blogs| %>
+      <%= date.day %>
 
-<%= link_to '日記をかく', new_blog_path %>
+      <% blogs.each do |blog| %>
+        <div>
+          <%= link_to blog.title, blog %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
-<%= month_calendar events: @blogs do |date, blogs| %>
-  <%= date.day %>
+  <!-- ④ 日記一覧 -->
+  <h2>日記一覧</h2>
 
-  <% blogs.each do |blog| %>
-    <div>
-      <%= link_to blog.title, blog %>
-    </div>
-  <% end %>
-<% end %>
+  <table class="blog-table">
+    <thead>
+      <tr>
+        <th>タイトル</th>
+        <th>時間</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @blogs.each do |blog| %>
+        <tr>
+          <td><%= blog.title %></td>
+          <td><%= blog.start_time.strftime("%Y-%m-%d %H:%M") %></td>
+          <td><%= link_to 'Show', blog %></td>
+          <td><%= link_to 'Edit', edit_blog_path(blog.id) %></td>
+          <td><%= link_to 'Destroy', blog_path(blog.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
