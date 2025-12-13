@@ -55,4 +55,96 @@ header h1 {
   font-weight: bold;
   cursor: pointer;
 }
+/* =========================
+   日記一覧（メモ帳風）
+========================= */
+
+/* 見出し */
+h2 {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* テーブル全体 */
+.blog-table {
+  width: 90%;
+  margin: 0 auto 60px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fffef7;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  overflow: hidden;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+/* ヘッダー（ノート上部） */
+.blog-table thead th {
+  background: #f5f3e8;
+  padding: 14px;
+  font-weight: bold;
+  color: #555;
+  border-bottom: 2px solid #e0dccb;
+}
+
+/* 行全体 */
+.blog-table tbody tr {
+  background: repeating-linear-gradient(
+    to bottom,
+    #fffef7,
+    #fffef7 32px,
+    #f1eee3 33px
+  );
+  transition: background 0.2s;
+}
+
+/* ホバー */
+.blog-table tbody tr:hover {
+  background: #fff6c9;
+}
+
+/* セル */
+.blog-table td {
+  padding: 12px 14px;
+  vertical-align: middle;
+  border-bottom: 1px dashed #d6d2c4;
+  color: #333;
+}
+
+/* タイトル列を強調 */
+.blog-table td:first-child {
+  font-weight: bold;
+}
+
+/* 時間 */
+.blog-table td:nth-child(2) {
+  font-size: 13px;
+  color: #777;
+}
+
+/* 操作リンク（編集・削除など） */
+.blog-table td a {
+  padding: 4px 8px;
+  background: #fff;
+  border-left: 4px solid #f2c94c;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  font-size: 12px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.08);
+}
+
+/* ホバー時 */
+.blog-table td a:hover {
+  background: #fff2b2;
+}
+/* =========================
+   サイト全体の背景色
+========================= */
+body {
+  background-color: #eaf6ff;
+}
 

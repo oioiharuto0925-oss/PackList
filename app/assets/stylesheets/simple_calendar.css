@@ -109,3 +109,38 @@
   border-collapse: separate;
   border-spacing: 4px;
 }
+.simple-calendar {
+  background: #fffef7;
+}
+
+/* 曜日ヘッダーをノート風に */
+.simple-calendar th {
+  background: #f5f3e8;
+  border-bottom: 2px solid #e0dccb;
+}
+
+/* 日付セルを点線で罫線っぽく */
+.simple-calendar td {
+  border: 1px dashed #d6d2c4;
+  background: #fffef7;
+}
+
+/* ホバー時：蛍光ペン感 */
+.simple-calendar td:hover {
+  background: #fff6c9;
+  transform: none;
+}
+
+/* 今日をマーカー風に */
+.simple-calendar td.today {
+  background: #fff2b2 !important;
+  border: 2px solid #f2c94c;
+}
+
+/* 予定を付箋っぽく */
+.simple-calendar td a {
+  background: #fff;
+  border-left: 4px solid #f2c94c;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.08);
+  font-size: 12px;
+}
