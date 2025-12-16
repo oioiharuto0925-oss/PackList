@@ -56,95 +56,144 @@ header h1 {
   cursor: pointer;
 }
 /* =========================
-   日記一覧（メモ帳風）
+   日記一覧：メモ帳風カード
 ========================= */
-
-/* 見出し */
-h2 {
-  text-align: center;
-  margin: 40px 0 20px;
-  font-size: 26px;
-  font-weight: bold;
-  color: #444;
-}
-
-/* テーブル全体 */
 .blog-table {
   width: 90%;
-  margin: 0 auto 60px;
+  margin: 30px auto;
   border-collapse: separate;
-  border-spacing: 0;
-  background: #fffef7;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  overflow: hidden;
-  font-family: "Helvetica", "Arial", sans-serif;
+  border-spacing: 0 16px;
 }
 
-/* ヘッダー（ノート上部） */
-.blog-table thead th {
-  background: #f5f3e8;
-  padding: 14px;
-  font-weight: bold;
-  color: #555;
-  border-bottom: 2px solid #e0dccb;
-}
-
-/* 行全体 */
+/* 各行を「1枚のメモ」にする */
 .blog-table tbody tr {
   background: repeating-linear-gradient(
     to bottom,
-    #fffef7,
-    #fffef7 32px,
-    #f1eee3 33px
+    #ffffff,
+    #ffffff 28px,
+    #f0f6ff 29px
   );
-  transition: background 0.2s;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-/* ホバー */
-.blog-table tbody tr:hover {
-  background: #fff6c9;
-}
-
-/* セル */
+/* セル共通 */
 .blog-table td {
-  padding: 12px 14px;
-  vertical-align: middle;
-  border-bottom: 1px dashed #d6d2c4;
-  color: #333;
+  padding: 16px 18px;
+  font-size: 14px;
+  vertical-align: top;
+  border: none;
 }
 
-/* タイトル列を強調 */
+/* 左の赤い罫線（ノート感） */
 .blog-table td:first-child {
-  font-weight: bold;
+  position: relative;
+  padding-left: 30px;
+}
+
+.blog-table td:first-child::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ff9aa2;
+}
+
+/* ホバーで少し浮く */
+.blog-table tbody tr:hover {
+  transform: translateY(-3px);
+  transition: 0.2s;
+}
+
+/* ヘッダーはシンプルに */
+.blog-table thead th {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+body {
+  background-color: #1e293b; /* ダークネイビー */
+}
+/* =========================
+   ダーク背景用：日記一覧の文字色
+========================= */
+
+/* 見出し「日記一覧」 */
+h2 {
+  color: white; /* 白に近いグレー */
+}
+
+/* テーブル全体の文字色 */
+.blog-table {
+  color: black;
+}
+
+/* タイトル列 */
+.blog-table td:first-child {
+  color: #ffffff;
 }
 
 /* 時間 */
 .blog-table td:nth-child(2) {
-  font-size: 13px;
-  color: #777;
+  color: #cbd5e1; /* 少し薄めの白 */
+}
+
+/* ヘッダー（タイトル / 時間） */
+.blog-table thead th {
+  color: #e5e7eb;
 }
 
 /* 操作リンク（編集・削除など） */
 .blog-table td a {
-  padding: 4px 8px;
-  background: #fff;
-  border-left: 4px solid #f2c94c;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #333;
-  font-size: 12px;
-  box-shadow: 1px 1px 4px rgba(0,0,0,0.08);
+  color: black;
+}
+.blog-table td:nth-child(2) {
+  color: #333;   /* 濃いグレー */
+}
+.blog-table td:nth-child(1) {
+  color: #111;   /* タイトルは少し濃く */
+  font-weight: bold;
+}
+p,
+p strong {
+  color: #ffffff;
+}
+p strong::after {
+  content: "：";
+  margin-right: 4px;
+}
+.title label,
+.time label,
+.content label {
+  color: #cbd5e1; /* 薄いグレー */
 }
 
-/* ホバー時 */
-.blog-table td a:hover {
-  background: #fff2b2;
+.title input,
+.content input,
+.time select {
+  color: black; /* 入力文字も薄グレー */
 }
-/* =========================
-   サイト全体の背景色
-========================= */
-body {
-  background-color: #eaf6ff;
+/* showページの本文を中央揃え＆文字を大きく */
+p {
+  text-align: center;
+  font-size: 20px;
 }
+
+/* タイトル・時間・内容の見出し（strong）をさらに強調 */
+p strong {
+  display: inline-block;
+  font-size: 22px;
+  margin-right: 6px;
+}
+
+/* Edit / Back リンク */
+a {
+  display: inline-block;
+  font-size: 18px;
+  margin: 10px;
+}
+
+
+
 

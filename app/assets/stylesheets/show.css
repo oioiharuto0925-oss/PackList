@@ -1,0 +1,31 @@
+
+/* Edit ボタン（/edit を含むリンク） */
+a[href*="/edit"] {
+  display: inline-block;
+  padding: 10px 22px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px;
+}
+
+/* Back ボタン（/blogs で終わるリンク） */
+a[href$="/blogs"] {
+  display: inline-block;
+  padding: 10px 22px;
+  background-color: #475569; /* グレー */
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px;
+}
+
+/* ホバー時（共通） */
+a[href*="/edit"]:hover,
+a[href$="/blogs"]:hover {
+  opacity: 0.85;
+}
